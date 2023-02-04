@@ -11,3 +11,26 @@ def save(game):
     id = results[0]["id"]
     game.id = id
     return game
+
+def select_all():
+    games = []
+    sql = "SELECT * FROM games"
+    results = run_sql(sql)
+    for row in results:
+        game = Game(row['name'], row["team1_score"],row['team2_score'],row['team_id'],row['id'])
+        games.append(game)
+    return games
+
+def select(id):
+    game = None
+    sql = "SELECT * FROM games WHERE id = %s"
+    values = [id]
+    results = run_sql(sql,values)
+    if results:
+        result = results[0]
+        game = Game(result['name'], result["team1_score"],result['team2_score'],result['team_id'],result['id'])
+    return game
+
+def delete_all():
+    sql = "DELETE FROM games"
+    run_sql(sql)
