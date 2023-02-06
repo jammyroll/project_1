@@ -7,12 +7,12 @@ teams_blueprint = Blueprint("teams",__name__)
 @teams_blueprint.route('/teams')
 def teams():
     teams = team_repository.select_all()
-    return render_template("teams/index.html",teams = teams)
+    return render_template("teams/index.html",list_of_teams = teams)
 
 @teams_blueprint.route('/teams/new')
 def new_team():
     teams = team_repository.select_all()
-    return render_template("tasks/new.html",list_of_teams = teams)
+    return render_template("teams/new.html",list_of_teams = teams)
     
     
 @teams_blueprint.route('/teams', methods = ['POST'])

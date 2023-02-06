@@ -1,3 +1,35 @@
 {% extends "base.html"%}
 {% block content %}
+
+
+
+
+<form action="/games" method="post">
+    <div>
+        <label for="name">Game Name:</label>
+        <input type="text" id="name" name="name" placeholder="Game Name" required>
+    </div>
+
+    <div>
+        <label for = "team1_score">Team 1 Score</label>
+        <input type="number" id="team1_score" name="team1_score" placeholder = "0" required>
+    </div>
+
+    <div>
+        <label for = "team2_score">Team 2 Score</label>
+        <input type="number" id="team2_score" name="team2_score" placeholder = "0" required>
+    </div>
+
+    <div>
+        <label for = "Team">Team</label>
+        <select id="team" name='team_id'>
+            {% for team in list_of_teams%}
+            <option value='{{team.id}}'>{{team.team_name}}</option>
+            {% endfor %}
+        </select>
+        </div>
+    <button type="submit">Add Team</button>
+
+</form>
+
 {% endblock %}

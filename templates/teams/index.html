@@ -1,17 +1,14 @@
 {% extends "base.html"%}
 {% block content %}
 <h1>Teams</h1>
+{% for team in list_of_teams %}
+<div class="team">
+  <div class = "content">
+    {{team.team_name}}
+    <div class="points">
+{%endfor%}
 
-<table>
-    <tr>
-      <th>Name</th>
-    
-    </tr>
-    {% for team in teams %}
-    <tr>
-        {{team.team_name}}
-    </tr>
-    {% endfor %}
-  </table>
-
+    </div>
+  </div>
+</div>
   {% endblock %}
