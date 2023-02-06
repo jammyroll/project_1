@@ -2,8 +2,6 @@
 {% block content %}
 
 
-
-
 <form action="/games" method="post">
     <div>
         <label for="name">Game Name:</label>
@@ -21,14 +19,22 @@
     </div>
 
     <div>
-        <label for = "Team">Team</label>
-        <select id="team" name='team_id'>
-            {% for team in list_of_teams%}
-            <option value='{{team.id}}'>{{team.team_name}}</option>
+        <label for = "team1">Team 1</label>
+        <select id="team1" name="team1_id" required>
+            {% for team in list_of_teams %}
+            <option value="{{team.id}}">{{team.team_name}}</option>
             {% endfor %}
         </select>
-        </div>
-    <button type="submit">Add Team</button>
+    </div>
+    <div>
+        <label for = "team2">Team 2</label>
+        <select id="team2" name="team2_id" required>
+            {% for team in list_of_teams %}
+            <option value="{{team.id}}">{{team.team_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit">Add Game</button>
 
 </form>
 

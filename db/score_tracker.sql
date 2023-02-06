@@ -15,5 +15,8 @@ CREATE TABLE games (
     name VARCHAR(255),
     team1_score INT,
     team2_score INT,
-    team_id INT NOT NULL REFERENCES teams(id)
+    team1_id INT NOT NULL REFERENCES teams(id),
+    team2_id INT NOT NULL REFERENCES teams(id),
+    team1_win BOOLEAN,
+    team2_win BOOLEAN
 );

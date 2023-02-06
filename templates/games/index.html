@@ -4,12 +4,20 @@
 
 <table>
     <tr>
-      <th>Name</th>
     
     </tr>
     {% for game in games %}
-    <tr>
+    <div class= 'game'>
+      <div class='content'>
         {{game.name}}
+      </div>
+      <div class="team1">
+        <span class='team1'>Team1: {{game.team1.team_name}}  <br> Team 2:  {{game.team2.team_name}}</span>
+
+      </div>
+    </div>
+    <tr>
+
     </tr>
     {% endfor %}
   </table>
