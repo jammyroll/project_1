@@ -11,9 +11,17 @@
       <div class='content'>
         {{game.name}}
       </div>
-      <div class="team1">
-        <span class='team1'>Team1: {{game.team1.team_name}}  <br> Team 2:  {{game.team2.team_name}}</span>
-
+      <div class="teams">
+        <span class='teams'> {{game.team1.team_name}} vs {{game.team2.team_name}} <br> {{game.team1_score}} : {{game.team2_score}}</span>
+      </div>
+      <div class="winner">
+        {% if game.team1 ==True%}
+        {{game.team1.team_name}} was the winner!!
+        <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+        {%else%} 
+        {{game.team2.team_name}} was the winner!!
+        <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+        {%endif%}
       </div>
     </div>
     <tr>

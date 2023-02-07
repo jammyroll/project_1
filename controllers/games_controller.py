@@ -28,7 +28,7 @@ def create_game():
     team2_win = request.form['team2_win']
     team1 = team_repository.select(team1_id)
     team2 = team_repository.select(team2_id)
-
-    game = Game(game_name, team1_score, team2_score,team1_id,team2_id,team1_win,team2_win)
+    # pdb.set_trace()
+    game = Game(game_name, team1_score, team2_score,team1,team2,team1_win,team2_win)
     game_repository.save(game)
     return redirect('/games')

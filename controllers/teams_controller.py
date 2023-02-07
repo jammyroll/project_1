@@ -30,3 +30,7 @@ def show_team(id):
     team = team_repository.select(id)
     return render_template('/teams/show.html',team_to_show = team)
 
+@teams_blueprint.route('/teams/<id>/edit')
+def edit_team(id):
+    team= team_repository.select(id)
+    return render_template('teams/edit.html',team_to_edit=team)
