@@ -26,10 +26,10 @@ def select(id):
     team = None
     sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
-    results = run_sql(sql,values)
-    if results:
-        result = results[0]
-        team = Team(result['team_name'],result['points'],result['wins'],result['losses'],result['id'])
+
+    results = run_sql(sql,values)[0]
+    if results is not None:
+        team = Team(results['team_name'],results['points'],results['wins'],results['losses'],results['id'])
     return team
 
 def delete_all():
@@ -38,5 +38,14 @@ def delete_all():
     
 def update(team):
     sql = 'UPDATE teams SET (team_name,points,wins,losses) = (%s,%s,%s,%s) WHERE id = %s'
-    values = [team.name,team.points,team.wins,team.losses,team.id]
+    values = [team.team_name,team.points,team.wins,team.losses,team.id]
+    run_sql(sql,values)
+    
+# def games(games):
+#     games = []
+#     sql = "SELECT games.* FROM games INNER JOIN games.team1_win = teams.wins WHERE "
+
+def delete(id):
+    sql = "DELETE FROM teams WHERE id = %s"
+    values = [id]
     run_sql(sql,values)

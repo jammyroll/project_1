@@ -1,6 +1,6 @@
 {%extends 'base.html'%}
 {%block content%}
-<form action="/teams/{{team_to_edit}}" method="post">
+<form action="/teams/{{team_to_edit.id}}" method="post">
     <div>
         <label for="team_name">Team Name:</label>
         <input type="text" id="team_name" name="team_name" placeholder="Team Name" value={{team_to_edit.team_name}} required autofocus>

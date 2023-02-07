@@ -12,14 +12,17 @@
       <span class = 'wins'>{{team.wins}} Wins</span>
     </div>
     <div class="losses">
-      <span class = 'losses'>{{team.loss}} Losses</span>
+      <span class = 'losses'>{{team.losses}} Losses</span>
     </div>
-    <p><a href="/teams/edit">Edit</a></p>
+    <p><a href="/teams/{{team.id}}">Edit</a></p>
 
+    <form action= "/teams/{{team.id}}/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="delete" />
+    </form>
 <br>
-{%endfor%}
-
     </div>
   </div>
 </div>
+{%endfor%}
+
   {% endblock %}
