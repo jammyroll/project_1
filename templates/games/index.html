@@ -2,7 +2,7 @@
 {% block content %}
 <h1>Games</h1>
 
-<table>
+<table class='game_box'>
     <tr>
     
     </tr>
@@ -16,12 +16,15 @@
       </div>
       <div class="winner">
         {% if game.team1_win ==True%}
-        {{game.team1.team_name}} was the winner!!
+        {{game.team1.team_name}} were the winner!!
         <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
         {%else%} 
         {{game.team2.team_name}} was the winner!!
         <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+
         {%endif%}
+        <br>
+        <hr>
       </div>
     </div>
     <tr>

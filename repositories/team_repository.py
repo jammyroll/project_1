@@ -1,10 +1,6 @@
 from db.run_sql import run_sql
 from models.team import Team
 
-import pdb
-
-
-
 def save(team):
     sql = "INSERT INTO teams (team_name, points, wins, losses) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [team.team_name, team.points, team.wins, team.losses]
@@ -42,9 +38,6 @@ def update(team):
     values = [team.team_name,team.points,team.wins,team.losses,team.id]
     run_sql(sql,values)
     
-# def games(games):
-#     games = []
-#     sql = "SELECT games.* FROM games INNER JOIN games.team1_win = teams.wins WHERE "
 
 def delete(id):
     sql = "DELETE FROM teams WHERE id = %s"

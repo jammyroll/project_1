@@ -5,11 +5,35 @@ body {    background-size: cover;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     padding: 0px;
     margin: 0px;
+
 }
 
 .menu{
     display: flex;
+    justify-content: space-evenly;
     padding: 30px;
     background-color: rgb(30, 208, 74);
     color: white;
+    list-style: none;
   }
+
+.game{
+    display: grid;
+    grid-auto-rows:max-content;
+    justify-content: space-evenly;
+}
+h1{
+    display: flex;
+    justify-content: center;
+
+}
+.content{
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.edit_team{
+    display: grid;
+    justify-content: space-evenly;
+
+}

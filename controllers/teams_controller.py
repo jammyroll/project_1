@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, Blueprint
 from models.team import Team
 import repositories.team_repository as team_repository
 import repositories.game_repository as game_repository
-import pdb
 teams_blueprint = Blueprint("teams",__name__)
 
 @teams_blueprint.route('/teams')

@@ -1,5 +1,4 @@
 from db.run_sql import run_sql
-import pdb
 from models.game import Game
 from models.team import Team
 from repositories import team_repository

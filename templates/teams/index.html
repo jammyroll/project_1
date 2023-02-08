@@ -14,7 +14,8 @@
     <div class="losses">
       <span class = 'losses'>{{team.losses}} Losses</span>
     </div>
-    <p><a href="/teams/{{team.id}}">Edit</a></p>
+    <p>
+      <a href="/teams/{{team.id}}">Edit</a></p>
 
     <form action= "/teams/{{team.id}}/delete" method="POST">
       <input class="btn btn--danger" type="submit" value="delete" />
