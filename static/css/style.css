@@ -1,0 +1,15 @@
+body {    background-size: cover;
+    background-repeat: no-repeat;
+    color: #000000;
+    background-color: rgb(213, 238, 188);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu{
+    display: flex;
+    padding: 30px;
+    background-color: rgb(30, 208, 74);
+    color: white;
+  }

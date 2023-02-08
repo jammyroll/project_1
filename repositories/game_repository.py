@@ -41,4 +41,8 @@ def delete_all():
     sql = "DELETE FROM games"
     run_sql(sql)
     
-    
+def count_wins():
+    sql = "SELECT COUNT(*) FROM games where (team1_id = %s and team1_win=true) or (team2_id=%s and team2_win=true);"
+    values=[team_repository.id]
+    count=run_sql(sql,values)
+    return count
